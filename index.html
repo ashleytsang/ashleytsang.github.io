@@ -1,20 +1,4 @@
-<?php
-
-if($_POST["submit"]) {
-    $recipient="ashleytsang13@gmail.com";
-    $subject="Form to email message";
-    $sender=$_POST["sender"];
-    $senderEmail=$_POST["senderEmail"];
-    $message=$_POST["message"];
-
-    $mailBody="Name: $sender\nEmail: $senderEmail\n\n$message";
-
-    mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>");
-
-    $thankYou="<p>Thank you! Your message has been sent.</p>";
-}
-
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -425,26 +409,22 @@ if($_POST["submit"]) {
 
 
 
-<form name ="htmlform" method ="post" action = "contact.php"> 
 <div id="contact" class="spacer" >
 <!--Contact Starts-->
 <div class="container contactform center">
 <h2 class="text-center  wowload fadeInUp">Any Questions? Contact me here!</h2>
   <div class="row wowload fadeInLeftBig">      
-      <div class="col-sm-6 col-sm-offset-3 col-xs-12">  
-
-
-      <?=$thankYou ?>    
-        <input type="text" placeholder="Name" name ="sender" maxlength="50">
-        <input type="text" placeholder="Email" name = "senderEmail" maxlength="80">
-        <textarea rows="5" placeholder="Message" name ="message" maxlength="1000"></textarea>
-        <button class="btn btn-primary"><i class="fa fa-paper-plane"><input type="submit" name ="submit"></i> Send</button>
+      <div class="col-sm-6 col-sm-offset-3 col-xs-12">      
+        <input type="text" placeholder="Name" >
+        <input type="text" placeholder="Email">
+        <textarea rows="5" placeholder="Message"></textarea>
+        <button class="btn btn-primary"><i class="fa fa-paper-plane">></i> Send</button>
       </div>
   </div>
 </div>
 </div>
 </div>
-</form>
+
 <!--Contact Ends-->
 
 
